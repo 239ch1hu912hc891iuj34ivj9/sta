@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload Image</title>
+    <title>Results</title>
 </head>
 <body>
-    <h1>Upload Image</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" multiple>
-        <input type="submit" value="Submit">
-    </form>
+    <h1>Prediction Results</h1>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Prediction Probability</th>
+        </tr>
+        {% for filename, result in results %}
+        <tr>
+            <td>{{ filename }}</td>
+            <td>{{ result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
