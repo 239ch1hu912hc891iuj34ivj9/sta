@@ -3,7 +3,8 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-app = Flask(__name__)
+app = Flask(__name__,  template_folder='templates/')
+
 
 # Load pre-trained machine learning model
 model = tf.keras.models.load_model("model.h5")
