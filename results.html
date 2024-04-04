@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +13,11 @@
             <th>Image</th>
             <th>Prediction Probability</th>
         </tr>
-        {% for result in results %}
-            <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ result }}</td>
-            </tr>
+        {% for filename, result in results %}
+        <tr>
+            <td>{{ filename }}</td>
+            <td>{{ result }}</td>
+        </tr>
         {% endfor %}
     </table>
 </body>
