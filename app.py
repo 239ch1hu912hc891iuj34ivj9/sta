@@ -11,7 +11,7 @@ model = tf.keras.models.load_model("model.h5")
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_templates('index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -26,7 +26,7 @@ def upload():
         predictions = model.predict(img_array)
         results.append((file.filename, predictions.tolist()[0]))
 
-    return render_template('results.html', results=results)
+    return render_templates('results.html', results=results)
 
 if __name__ == '__main__':
     app.run(debug=True)
