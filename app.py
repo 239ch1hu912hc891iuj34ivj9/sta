@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-app = Flask(__name__,  template_folder='templates/')
+app = Flask(__name__,  template_folder='.')
 
 
 # Load pre-trained machine learning model
